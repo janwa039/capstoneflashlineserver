@@ -2,8 +2,33 @@ var express = require('express');
 var router = express.Router();
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+router.get('/institutions', function(req, res, next) {
+  res.json({
+      institutions: [
+          {
+              name: "UO",
+              offices: [
+                  {
+                    name: "FSS"
+                  },
+                  {
+                    name: "SITE"
+                  }
+              ]
+          },
+          {
+              name: "Government",
+              offices: [
+                  {
+                      name: "FSS"
+                  },
+                  {
+                      name: "SITE"
+                  }
+              ]
+          }
+      ]
+  });
 });
 
 module.exports = router;
