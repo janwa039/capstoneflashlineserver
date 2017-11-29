@@ -2,6 +2,7 @@
 var mongoose=require('mongoose');
 
 var mongoDb='mongodb://jennyb:tukab2@ds259255.mlab.com:59255/basseysdatabase';
+//var mongoDb='mongodb://localhost:27017/basseysdatabase';
 
 mongoose.connect(mongoDb, {useMongoClient:true});
 
@@ -13,6 +14,8 @@ db.on('error', function(err){
 
 db.on('open', function(){
     console.log('we are connected');
+
+
 });
 
-module.export=mongoose;
+module.exports=db;
