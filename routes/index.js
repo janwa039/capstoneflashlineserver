@@ -2,6 +2,8 @@ var express = require('express');
 var router = express.Router();
 const institution = require(__dirname + '/../servingpage');
 
+const institution = require(__dirname + '/../user');
+
 
 
 //get the current number
@@ -112,8 +114,24 @@ router.post('/institutions/:institution/buildings/:build', function(req, res) {
      });
 });
 
-//Update a building in an institution
-router.get('/institutions/:institution/buildings/:building/servingNumber', function(req, res) {
+//get firstname, lastname, email
+router.post('/users, function(req, res) {
+
+    var user= new Users({
+        firstName: req.body.firstName,
+        lastName: req.body.lastName,
+        studentNumber: req.body.studentNumber
+    })
+
+    user.save(function(err, information){
+        if(!err){
+            res.status(200).json({message:"now saved"});
+        }
+        else
+        {
+            res.status(500).json({message:"no informartion found"});
+        }
+    })
 
 
     res.end();
