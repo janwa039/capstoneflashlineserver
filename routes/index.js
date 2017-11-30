@@ -115,7 +115,7 @@ router.post('/institutions/:institution/buildings/:build', function(req, res) {
 });
 
 //get firstname, lastname, email
-router.post('/users, function(req, res) {
+router.post('/users', function(req, res) {
 
     var user= new Users({
         firstName: req.body.firstName,
@@ -133,8 +133,6 @@ router.post('/users, function(req, res) {
         }
     })
 
-
-    res.end();
 });
 
 //GET all the buildings in an institution
