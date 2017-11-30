@@ -8,5 +8,5 @@ var usermodel= new mongoose.Schema({
     studentNumber: String
 });
 
-module.exports = conection.model("users", usermodel);
+module.exports = connection.model("Users", usermodel);
 

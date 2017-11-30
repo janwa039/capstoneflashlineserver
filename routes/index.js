@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 const institution = require(__dirname + '/../servingpage');
 
-const institution = require(__dirname + '/../user');
+const Users = require(__dirname + '/../user');
 
 
 
