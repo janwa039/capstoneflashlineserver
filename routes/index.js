@@ -117,6 +117,7 @@ router.post('/institutions/:institution/buildings/:build', function(req, res) {
 //get firstname, lastname, email
 router.post('/users', function(req, res) {
 
+    console.log(req.body)
     var user= new Users({
         firstName: req.body.firstName,
         lastName: req.body.lastName,
@@ -124,6 +125,8 @@ router.post('/users', function(req, res) {
     })
 
     user.save(function(err, information){
+        console.log("AGAIN")
+        console.log(information)
         if(!err){
             res.status(200).json({message:"now saved"});
         }
